@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0f14">
+  <meta name="description" content="Portfólio de Cesar Afonso — Analista Técnico de TI com experiência em infraestrutura, sistemas, redes, dados, automação e modernização tecnológica.">
+  <meta name="author" content="Cesar Afonso">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cesar Afonso | Analista Técnico de TI">
+  <meta property="og:description" content="Infraestrutura · Sistemas · Redes · Dados · Automação · Modernização">
+  <title>Cesar Afonso | Analista Técnico de TI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0f14'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' fill='%2322d3ee' font-family='monospace' font-size='34' font-weight='700'%3ECA%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --bg2:#0f151c;
+      --card:#121a22;
+      --card2:#16212b;
+      --line:#24313d;
+      --line-soft:#1a252f;
+      --text:#edf3f7;
+      --muted:#93a4b5;
+      --dim:#607284;
+      --primary:#22d3ee;
+      --primary-2:#06b6d4;
+      --green:#22c55e;
+      --amber:#f59e0b;
+      --purple:#8b5cf6;
+      --danger:#ef4444;
+      --radius:14px;
+      --radius-lg:22px;
+      --shadow:0 18px 55px rgba(0,0,0,.34);
+      --max:1180px;
+      --sans:"Inter","Segoe UI",system-ui,sans-serif;
+      --display:"Space Grotesk","Inter",sans-serif;
+      --mono:"JetBrains Mono",ui-monospace,monospace;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:82px}
+    body{
+      font-family:var(--sans);color:var(--text);background:var(--bg);
+      line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
+      background-image:linear-gradient(rgba(34,211,238,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(34,211,238,.025) 1px,transparent 1px);
+      background-size:48px 48px;
+      mask-image:radial-gradient(ellipse 80% 60% at 50% 35%,#000 20%,transparent 90%);
+    }
+    body:after{
+      content:"";position:fixed;inset:-20%;pointer-events:none;z-index:-3;
+      background:
+        radial-gradient(circle at 20% 10%,rgba(34,211,238,.07),transparent 24%),
+        radial-gradient(circle at 80% 30%,rgba(139,92,246,.055),transparent 22%);
+    }
+    ::selection{background:var(--primary);color:#071016}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    section{padding:96px 0;position:relative}
+    .section-head{max-width:720px;margin-bottom:42px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;color:var(--primary);
+      font:700 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:13px
+    }
+    .eyebrow:before{content:"◆";font-size:7px}
+    h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.035em}
+    h2{font-size:clamp(2rem,4vw,3rem)}
+    h2 span{color:var(--primary)}
+    p{color:var(--muted)}
+    .lead{font-size:1.02rem;max-width:68ch}
+    .mono{font-family:var(--mono)}
+
+    /* NAV */
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(11,15,20,.78);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font:700 14px var(--mono)}
+    .brand-mark{
+      width:34px;height:34px;border:1px solid rgba(34,211,238,.4);border-radius:9px;
+      display:grid;place-items:center;color:var(--primary);background:rgba(34,211,238,.06)
+    }
+    .brand small{font-size:9px;color:var(--primary);display:block;letter-spacing:.08em}
+    .nav-links{display:flex;align-items:center;gap:3px;list-style:none}
+    .nav-links a{font-size:13px;color:var(--muted);padding:9px 12px;border-radius:8px;transition:.2s}
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+    .nav-links .cv{background:var(--primary);color:#071016;font-weight:800;padding-inline:17px}
+    .nav-links .cv:hover{background:#67e8f9;color:#071016}
+    .menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:8px 10px;border-radius:9px;cursor:pointer}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px}
+    .hero-grid{display:grid;grid-template-columns:1.16fr .84fr;gap:65px;align-items:center}
+    .status{
+      display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(34,211,238,.18);
+      background:rgba(34,211,238,.055);border-radius:999px;padding:7px 12px;
+      font:600 10px var(--mono);color:var(--primary);letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px
+    }
+    .status i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(34,197,94,.65);animation:pulse 2s infinite}
+    @keyframes pulse{50%{opacity:.45}}
+    .hero h1{font-size:clamp(3.1rem,7vw,5.7rem);margin-bottom:20px}
+    .hero h1 .line{display:block}
+    .hero h1 .accent{color:var(--primary)}
+    .hero-role{font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);margin-bottom:21px}
+    .hero-intro{font-size:1.05rem;max-width:680px;margin-bottom:27px}
+    .hero-intro strong{color:var(--text)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:29px}
+    .chip{
+      border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:999px;
+      padding:7px 11px;font-size:11px;color:var(--muted);transition:.2s
+    }
+    .chip:hover{border-color:var(--primary-2);color:var(--primary);transform:translateY(-2px)}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 18px;
+      border-radius:10px;border:1px solid transparent;font-size:13px;font-weight:800;cursor:pointer;transition:.25s
+    }
+    .btn-primary{background:var(--primary);color:#071016}
+    .btn-primary:hover{background:#67e8f9;transform:translateY(-2px);box-shadow:0 12px 35px rgba(34,211,238,.18)}
+    .btn-outline{border-color:var(--line);background:transparent;color:var(--text)}
+    .btn-outline:hover{border-color:var(--primary);color:var(--primary);transform:translateY(-2px)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:24px;border-top:1px solid var(--line-soft);padding-top:19px}
+    .meta-label{display:block;color:var(--dim);font:600 9px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .meta-value{font-size:12px;color:var(--text);font-weight:600}
+
+    /* TECH PANEL */
+    .tech-panel{
+      border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,#121b23,#0e151c);
+      box-shadow:var(--shadow);overflow:hidden;transform:perspective(900px) rotateY(-3deg)
+    }
+    .panel-top{display:flex;align-items:center;gap:7px;padding:13px 16px;border-bottom:1px solid var(--line);background:#0d141b}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--line)}
+    .panel-title{margin:auto;font:500 10px var(--mono);color:var(--dim)}
+    .panel-body{padding:24px}
+    .identity{display:flex;gap:14px;align-items:center;padding-bottom:20px;border-bottom:1px dashed var(--line)}
+    .avatar{
+      width:60px;height:60px;border-radius:15px;display:grid;place-items:center;
+      background:linear-gradient(145deg,#103340,#0b2028);border:1px solid rgba(34,211,238,.35);
+      color:var(--primary);font:800 20px var(--mono);box-shadow:0 0 25px rgba(34,211,238,.1)
+    }
+    .identity strong{display:block;font-size:15px}.identity span{font-size:11px;color:var(--muted)}
+    .system-list{display:grid;gap:12px;margin:22px 0}
+    .system-row{display:grid;grid-template-columns:120px 1fr auto;gap:10px;align-items:center;font:500 10px var(--mono)}
+    .system-row .name{color:var(--muted)}
+    .bar{height:5px;border-radius:999px;background:#1d2933;overflow:hidden}
+    .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--primary-2),var(--primary));border-radius:999px}
+    .online{color:var(--green)}
+    .panel-footer{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+    .mini{padding:11px;border:1px solid var(--line-soft);border-radius:9px;background:rgba(255,255,255,.02)}
+    .mini b{display:block;font:700 12px var(--mono);color:var(--primary)}.mini span{font-size:9px;color:var(--dim)}
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:42px}
+    .stat{border:1px solid var(--line);border-radius:13px;background:var(--card);padding:20px;text-align:center;position:relative;overflow:hidden}
+    .stat:before{content:"";position:absolute;top:0;left:22%;right:22%;height:2px;background:var(--primary);opacity:.45}
+    .stat b{display:block;font:700 25px var(--mono);color:var(--primary);line-height:1.1;margin-bottom:6px}
+    .stat span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+    /* ABOUT / MAP */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}
+    .about-copy{padding-right:20px}
+    .about-copy p{margin-bottom:16px;font-size:15px}
+    .about-copy strong{color:var(--text)}
+    .map-card{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--card);padding:22px;position:relative;overflow:hidden}
+    .map-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(34,211,238,.06),transparent 52%)}
+    .map-title{font:700 10px var(--mono);color:var(--primary);letter-spacing:.08em;margin-bottom:22px}
+    .map{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:13px;align-items:center}
+    .map-center{grid-column:1/-1;justify-self:center;z-index:2}
+    .node{padding:12px;border:1px solid var(--line);border-radius:10px;background:#101820;text-align:center;position:relative;z-index:2}
+    .node strong{display:block;font:700 11px var(--mono);color:var(--text)}
+    .node span{font-size:9px;color:var(--dim)}
+    .node.center{border-color:rgba(34,211,238,.4);box-shadow:0 0 25px rgba(34,211,238,.08);min-width:190px}
+    .node.center strong{color:var(--primary)}
+    .map-line{height:22px;border-left:1px dashed #35505d;position:absolute;left:50%;top:59px}
+    .map-bottom{display:grid;grid-template-columns:1fr 1fr;gap:13px;grid-column:1/-1}
+
+    /* EXPERTISE */
+    .expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .expertise{
+      border:1px solid var(--line);background:var(--card);border-radius:var(--radius);
+      padding:22px;transition:.3s;position:relative;overflow:hidden
+    }
+    .expertise:hover{transform:translateY(-5px);border-color:#31505e;box-shadow:var(--shadow)}
+    .expertise-num{font:700 10px var(--mono);color:var(--primary);margin-bottom:20px}
+    .expertise h3{font-size:19px;margin-bottom:9px}
+    .expertise p{font-size:12px;margin-bottom:16px}
+    .tags{display:flex;flex-wrap:wrap;gap:5px}.tag{font-size:9px;color:var(--muted);padding:4px 7px;border:1px solid var(--line);border-radius:5px;background:#0e151b}
+
+    /* WORKFLOW */
+    .workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+    .step{border:1px solid var(--line);background:var(--card);border-radius:11px;padding:17px 13px;position:relative}
+    .step:not(:last-child):after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--primary);z-index:2;font-family:var(--mono)}
+    .step b{display:block;font:700 10px var(--mono);color:var(--primary);margin-bottom:8px}.step strong{display:block;font-size:13px;margin-bottom:5px}.step span{font-size:9px;color:var(--dim)}
+
+    /* EXPERIENCE */
+    .experience{border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,var(--card),#10171e);padding:29px}
+    .exp-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;border-bottom:1px dashed var(--line);padding-bottom:21px;margin-bottom:21px}
+    .exp-company{font:700 11px var(--mono);color:var(--primary);text-transform:uppercase;letter-spacing:.08em}
+    .exp-title{font-size:25px;margin:4px 0 5px}.exp-sub{font-size:12px;color:var(--muted)}
+    .period{font:600 10px var(--mono);color:var(--muted);border:1px solid var(--line);background:#0e151b;border-radius:999px;padding:7px 10px;white-space:nowrap}
+    .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .exp-box{border:1px solid var(--line-soft);border-radius:10px;padding:16px;background:rgba(255,255,255,.015)}
+    .exp-box h4{font:700 10px var(--mono);color:var(--primary);text-transform:uppercase;margin-bottom:10px}
+    .exp-box ul{list-style:none;display:grid;gap:6px}.exp-box li{font-size:11px;color:var(--muted)}.exp-box li:before{content:"▸";color:var(--primary);margin-right:6px}
+
+    /* PROJECTS */
+    .project-filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+    .filter{border:1px solid var(--line);background:transparent;color:var(--muted);padding:7px 11px;border-radius:999px;font-size:10px;cursor:pointer}
+    .filter.active,.filter:hover{border-color:var(--primary);color:var(--primary);background:rgba(34,211,238,.05)}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+    .project{
+      border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--card);overflow:hidden;
+      transition:.3s;display:flex;flex-direction:column
+    }
+    .project:hover{transform:translateY(-5px);border-color:#31505e;box-shadow:var(--shadow)}
+    .project-visual{height:190px;background:#0c1319;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+    .project-visual:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(34,211,238,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.035) 1px,transparent 1px);background-size:28px 28px}
+    .diagram{position:absolute;inset:22px;display:flex;align-items:center;justify-content:center;gap:10px}
+    .dnode{border:1px solid #2a414e;background:#111a21;border-radius:8px;padding:9px 11px;text-align:center;font:700 9px var(--mono);color:var(--text);z-index:1}
+    .dnode.accent{border-color:rgba(34,211,238,.45);color:var(--primary);box-shadow:0 0 22px rgba(34,211,238,.06)}
+    .arrow{color:var(--primary);font:700 15px var(--mono)}
+    .project-content{padding:21px;display:flex;flex-direction:column;flex:1}
+    .project-cat{font:700 9px var(--mono);color:var(--primary);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+    .project h3{font-size:20px;margin-bottom:8px}.project p{font-size:12px;margin-bottom:15px}
+    .project-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:10px}
+    .case-btn{color:var(--primary);font:700 10px var(--mono);cursor:pointer;background:none;border:0}.case-btn:hover{text-decoration:underline}
+    .project.hidden{display:none}
+
+    /* LAB */
+    .lab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .lab{
+      border:1px solid var(--line);border-radius:13px;padding:20px;background:var(--card);
+      position:relative;overflow:hidden;transition:.3s
+    }
+    .lab:hover{border-color:#31505e;transform:translateY(-4px)}
+    .lab .code{font:700 9px var(--mono);color:var(--dim);margin-bottom:17px}
+    .lab h3{font-size:17px;margin-bottom:6px}.lab p{font-size:11px;margin-bottom:13px}
+    .lab .state{font:600 9px var(--mono);color:var(--green)}
+
+    /* STACK */
+    .stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .stack-card{border:1px solid var(--line);border-radius:13px;background:var(--card);padding:20px}
+    .stack-card h3{font:700 10px var(--mono);color:var(--primary);letter-spacing:.08em;text-transform:uppercase;margin-bottom:13px}
+    .stack-list{display:flex;flex-wrap:wrap;gap:6px}.stack-item{font-size:10px;padding:6px 8px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:#0e151b}
+
+    /* EDUCATION */
+    .timeline{position:relative;display:grid;gap:12px}
+    .timeline:before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:1px;background:var(--line)}
+    .edu{position:relative;padding-left:35px}.edu:before{content:"";position:absolute;left:5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--primary);box-shadow:0 0 0 4px rgba(34,211,238,.08)}
+    .edu-card{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:17px 19px}
+    .edu-card .date{font:700 9px var(--mono);color:var(--primary);margin-bottom:5px}.edu-card h3{font-size:17px;margin-bottom:4px}.edu-card p{font-size:11px}
+
+    /* CONTACT */
+    .contact{border:1px solid var(--line);border-radius:var(--radius-lg);background:linear-gradient(145deg,#111b23,#0d141a);padding:45px;text-align:center;position:relative;overflow:hidden}
+    .contact:before{content:"";position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(34,211,238,.07);filter:blur(70px);left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none}
+    .contact>*{position:relative}.contact h2{max-width:700px;margin:0 auto 14px}.contact p{max-width:620px;margin:0 auto 25px;font-size:14px}
+    .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+    .contact-link{border:1px solid var(--line);padding:9px 13px;border-radius:9px;font-size:11px;color:var(--muted);transition:.2s}.contact-link:hover{border-color:var(--primary);color:var(--primary)}
+
+    footer{padding:30px 0;border-top:1px solid var(--line-soft)}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center}
+    footer p{font-size:10px}.footer-brand{font:700 11px var(--mono);color:var(--text)}
+
+    /* MODAL */
+    .modal{position:fixed;inset:0;background:rgba(2,5,8,.78);backdrop-filter:blur(10px);z-index:200;display:none;place-items:center;padding:20px}
+    .modal.open{display:grid}
+    .modal-card{width:min(760px,100%);max-height:88vh;overflow:auto;background:#101820;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+    .modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center;padding:19px 21px;border-bottom:1px solid var(--line)}
+    .modal-head h3{font-size:20px}.close{border:1px solid var(--line);background:transparent;color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer}.close:hover{color:var(--primary);border-color:var(--primary)}
+    .modal-body{padding:22px}.modal-body h4{font:700 10px var(--mono);color:var(--primary);margin:18px 0 7px;text-transform:uppercase}.modal-body h4:first-child{margin-top:0}.modal-body p{font-size:13px}.modal-tags{margin-top:14px}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* CV PRINT */
+@media print{body{background:#fff!important;color:#111!important}body:before,body:after,.nav,main>section:not(.cv-only),footer,.modal{display:none!important}.cv-only{display:block!important}.cv-page{font-family:Arial,sans-serif;color:#111}.cv-header{display:flex;justify-content:space-between;border-bottom:2px solid #111;padding-bottom:10px}.cv-name{font-size:25px;font-weight:800}.cv-role{font-size:11px;font-weight:700}.cv-contact{text-align:right;font-size:8px}.cv-section{margin-top:12px}.cv-section h2{font-size:10px;text-transform:uppercase;border-bottom:1px solid #aaa;padding-bottom:3px}.cv-section p,.cv-section li{font-size:9px;line-height:1.45}.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.cv-item{font-size:9px;margin:5px 0}.cv-date{float:right;color:#555}.cv-only{display:none}}
+/* RESPONSIVE */
+    @media(max-width:980px){
+      .nav-links{display:none}.menu-btn{display:block}
+      .nav.open .nav-links{display:flex;position:absolute;left:20px;right:20px;top:70px;flex-direction:column;align-items:stretch;background:#0d141a;border:1px solid var(--line);border-radius:12px;padding:8px}
+      .nav.open .nav-links a{display:block}
+      .hero-grid,.about-grid{grid-template-columns:1fr}.tech-panel{transform:none}
+      .hero{min-height:auto;padding-top:125px}.hero h1{font-size:clamp(3rem,12vw,5rem)}
+      .expertise-grid{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(3,1fr)}
+      .step:not(:last-child):after{display:none}.exp-grid{grid-template-columns:repeat(2,1fr)}
+      .stack-grid{grid-template-columns:repeat(2,1fr)}.lab-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      section{padding:72px 0}.container{width:min(var(--max),calc(100% - 28px))}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .expertise-grid,.projects,.lab-grid,.stack-grid{grid-template-columns:1fr}
+      .workflow{grid-template-columns:1fr 1fr}.exp-grid{grid-template-columns:1fr}
+      .exp-head{flex-direction:column}.period{align-self:flex-start}
+      .contact{padding:30px 20px}.footer-inner{flex-direction:column;align-items:flex-start}
+      .map-bottom{grid-template-columns:1fr}.hero-meta{gap:14px}
+      .project-visual{height:165px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">CA</span>
+        <span>CESAR AFONSO<small>TI / INFRA / SYSTEMS</small></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#especialidades">Especialidades</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a class="cv" href="#" onclick="generateCV();return false;">Baixar CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="reveal">
+            <div class="status"><i></i> Analista Técnico de TI</div>
+            <h1><span class="line">Tecnologia que</span><span class="line">mantém operações <span class="accent">funcionando.</span></span></h1>
+            <div class="hero-role">Infraestrutura · Sistemas · Redes · Dados · Automação</div>
+            <p class="hero-intro">
+              Profissional de TI com <strong>7+ anos de experiência</strong> em ambientes corporativos,
+              atuando da sustentação de infraestrutura e sistemas à análise de problemas,
+              automação de processos e modernização tecnológica.
+            </p>
+            <div class="chips">
+              <span class="chip">Windows Server</span><span class="chip">Active Directory</span>
+              <span class="chip">VMware</span><span class="chip">Fortinet</span>
+              <span class="chip">SQL Server</span><span class="chip">Oracle</span>
+              <span class="chip">.NET</span><span class="chip">React</span>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="#projetos">Ver projetos →</a>
+              <a class="btn btn-outline" href="#" onclick="generateCV();return false;">Baixar CV</a>
+              <a class="btn btn-outline" href="#contato">Entrar em contato</a>
+            </div>
+            <div class="hero-meta">
+              <div><span class="meta-label">Atuação</span><span class="meta-value">Infraestrutura & Sistemas</span></div>
+              <div><span class="meta-label">Perfil</span><span class="meta-value">Técnico · Analítico · Solucionador</span></div>
+              <div><span class="meta-label">Modelo</span><span class="meta-value">Remoto · Projetos · Oportunidades</span></div>
+            </div>
+          </div>
+
+          <div class="tech-panel reveal">
+            <div class="panel-top">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="panel-title">cesar.infrastructure</span>
+            </div>
+            <div class="panel-body">
+              <div class="identity">
+                <div class="avatar">CA</div>
+                <div><strong>Cesar Afonso</strong><span>Analista Técnico de TI</span></div>
+              </div>
+              <div class="system-list">
+                <div class="system-row"><span class="name">Windows Server</span><span class="bar"><i style="width:92%"></i></span><span class="online">●</span></div>
+                <div class="system-row"><span class="name">Virtualização</span><span class="bar"><i style="width:88%"></i></span><span class="online">●</span></div>
+                <div class="system-row"><span class="name">Active Directory</span><span class="bar"><i style="width:90%"></i></span><span class="online">●</span></div>
+                <div class="system-row"><span class="name">Network</span><span class="bar"><i style="width:86%"></i></span><span class="online">●</span></div>
+                <div class="system-row"><span class="name">Databases</span><span class="bar"><i style="width:84%"></i></span><span class="online">●</span></div>
+              </div>
+              <div class="panel-footer">
+                <div class="mini"><b>INFRA</b><span>Servidores · Redes</span></div>
+                <div class="mini"><b>SYSTEMS</b><span>Aplicações · APIs</span></div>
+                <div class="mini"><b>DATA</b><span>SQL · Oracle</span></div>
+                <div class="mini"><b>AUTOMATION</b><span>Scripts · Processos</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><b>7+</b><span>Anos em TI</span></div>
+          <div class="stat"><b>INFRA</b><span>Ambientes corporativos</span></div>
+          <div class="stat"><b>DADOS</b><span>SQL Server · Oracle</span></div>
+          <div class="stat"><b>FULL</b><span>Visão ponta a ponta</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">01 / Sobre</div>
+          <h2>Mais do que suporte.<br><span>Construo soluções.</span></h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>Minha trajetória em TI começou na resolução de problemas e na sustentação de ambientes corporativos. Ao longo dos anos, minha atuação evoluiu para uma visão mais ampla de tecnologia, envolvendo <strong>infraestrutura, redes, servidores, sistemas, bancos de dados e automação.</strong></p>
+            <p>Atuo como Analista Técnico de TI em ambientes corporativos e sistemas críticos, buscando estabilidade operacional, melhoria contínua e evolução tecnológica.</p>
+            <p>Minha experiência permite transitar entre diferentes camadas: <strong>do usuário e infraestrutura até servidores, bancos de dados, aplicações e integrações.</strong></p>
+            <p>Meu objetivo é transformar problemas técnicos em soluções sustentáveis, documentadas e preparadas para evoluir.</p>
+          </div>
+          <div class="map-card reveal">
+            <div class="map-title">MAPA DE ATUAÇÃO</div>
+            <div class="map">
+              <div class="node"><strong>INFRA</strong><span>Servidores · VMware</span></div>
+              <div class="node"><strong>REDES</strong><span>Fortinet · MikroTik</span></div>
+              <div class="map-center node center"><strong>CESAR AFONSO</strong><span>Analista Técnico de TI</span></div>
+              <div class="map-bottom">
+                <div class="node"><strong>SISTEMAS</strong><span>.NET · IIS · APIs</span></div>
+                <div class="node"><strong>DADOS</strong><span>SQL · Oracle</span></div>
+              </div>
+              <div class="map-bottom">
+                <div class="node"><strong>AUTOMAÇÃO</strong><span>PowerShell · Python</span></div>
+                <div class="node"><strong>MODERNIZAÇÃO</strong><span>Legacy → moderno</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">02 / O que eu resolvo</div>
+          <h2>Tecnologia aplicada ao <span>problema certo.</span></h2>
+          <p class="lead">Uma atuação multidisciplinar para diagnosticar, sustentar, automatizar e modernizar ambientes e aplicações.</p>
+        </div>
+        <div class="expertise-grid">
+          <article class="expertise reveal"><div class="expertise-num">01 — INFRA</div><h3>Infraestrutura & Servidores</h3><p>Administração, sustentação e otimização de ambientes corporativos.</p><div class="tags"><span class="tag">Windows Server</span><span class="tag">AD</span><span class="tag">GPO</span><span class="tag">VMware</span><span class="tag">Veeam</span><span class="tag">IIS</span></div></article>
+          <article class="expertise reveal"><div class="expertise-num">02 — NETWORK</div><h3>Redes & Segurança</h3><p>Conectividade, segmentação, segurança e administração de redes.</p><div class="tags"><span class="tag">Fortinet</span><span class="tag">MikroTik</span><span class="tag">UniFi</span><span class="tag">VLAN</span><span class="tag">VPN</span><span class="tag">Firewall</span></div></article>
+          <article class="expertise reveal"><div class="expertise-num">03 — SYSTEMS</div><h3>Sistemas Corporativos</h3><p>Sustentação, troubleshooting, integração e evolução de aplicações.</p><div class="tags"><span class="tag">.NET</span><span class="tag">ASP.NET</span><span class="tag">ASP Classic</span><span class="tag">IIS</span><span class="tag">APIs</span></div></article>
+          <article class="expertise reveal"><div class="expertise-num">04 — DATA</div><h3>Banco de Dados</h3><p>Administração, análise, manutenção e troubleshooting de dados.</p><div class="tags"><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">PL/SQL</span><span class="tag">T-SQL</span></div></article>
+          <article class="expertise reveal"><div class="expertise-num">05 — AUTOMATION</div><h3>Automação</h3><p>Transformação de tarefas repetitivas em processos mais rápidos e confiáveis.</p><div class="tags"><span class="tag">PowerShell</span><span class="tag">Batch</span><span class="tag">Python</span></div></article>
+          <article class="expertise reveal"><div class="expertise-num">06 — MODERNIZE</div><h3>Modernização Tecnológica</h3><p>Análise de ambientes legados e evolução para arquiteturas modernas.</p><div class="tags"><span class="tag">VB6</span><span class="tag">.NET</span><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">APIs</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">03 / Método</div>
+          <h2>Do problema à <span>solução.</span></h2>
+          <p class="lead">Uma abordagem orientada a diagnóstico, execução controlada, validação e documentação.</p>
+        </div>
+        <div class="workflow reveal">
+          <div class="step"><b>01</b><strong>Diagnóstico</strong><span>Entender o ambiente e a causa.</span></div>
+          <div class="step"><b>02</b><strong>Análise</strong><span>Mapear dependências e impactos.</span></div>
+          <div class="step"><b>03</b><strong>Planejamento</strong><span>Definir estratégia e solução.</span></div>
+          <div class="step"><b>04</b><strong>Implementação</strong><span>Executar de forma controlada.</span></div>
+          <div class="step"><b>05</b><strong>Validação</strong><span>Testar e acompanhar.</span></div>
+          <div class="step"><b>06</b><strong>Documentação</strong><span>Registrar e melhorar.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">04 / Experiência</div>
+          <h2>Experiência que conecta <span>camadas.</span></h2>
+        </div>
+        <div class="experience reveal">
+          <div class="exp-head">
+            <div><div class="exp-company">Madri Solutions → Movebuss</div><div class="exp-title">Analista Técnico de TI</div><div class="exp-sub">Infraestrutura · Sistemas · Redes · Dados · Suporte</div></div>
+            <div class="period">13/05/2019 — atual</div>
+          </div>
+          <div class="exp-grid">
+            <div class="exp-box"><h4>Infraestrutura</h4><ul><li>Active Directory</li><li>GPO e Windows Server</li><li>VMware / virtualização</li><li>Veeam / backup</li><li>IIS</li></ul></div>
+            <div class="exp-box"><h4>Redes</h4><ul><li>Fortinet</li><li>MikroTik</li><li>UniFi</li><li>VLAN / VPN</li><li>Conectividade</li></ul></div>
+            <div class="exp-box"><h4>Sistemas & Dados</h4><ul><li>Sustentação de aplicações</li><li>SQL Server</li><li>Oracle / PL/SQL</li><li>Troubleshooting</li><li>Integrações</li></ul></div>
+            <div class="exp-box"><h4>Operação</h4><ul><li>Suporte N1/N2</li><li>Análise de incidentes</li><li>Documentação</li><li>Melhoria de processos</li><li>Base de conhecimento</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">05 / Projetos & Cases</div>
+          <h2>Problema → atuação → <span>solução.</span></h2>
+          <p class="lead">Cases apresentados de forma técnica, sem expor informações confidenciais de ambientes corporativos.</p>
+        </div>
+        <div class="project-filters reveal">
+          <button class="filter active" data-filter="all">Todos</button>
+          <button class="filter" data-filter="infra">Infra</button>
+          <button class="filter" data-filter="network">Redes</button>
+          <button class="filter" data-filter="data">Dados</button>
+          <button class="filter" data-filter="systems">Sistemas</button>
+          <button class="filter" data-filter="automation">Automação</button>
+        </div>
+
+        <div class="projects">
+          <article class="project reveal" data-category="infra" data-case="ad">
+            <div class="project-visual"><div class="diagram"><div class="dnode">DC01<br><small>AD / DNS</small></div><span class="arrow">→</span><div class="dnode accent">BACKUP<br><small>RECOVERY</small></div><span class="arrow">→</span><div class="dnode">RESTORE<br><small>DR</small></div></div></div>
+            <div class="project-content"><div class="project-cat">Infraestrutura</div><h3>Active Directory & Disaster Recovery</h3><p>Backup, restauração e procedimentos de recuperação de ambiente Active Directory, incluindo atenção a componentes críticos como SYSVOL.</p><div class="tags"><span class="tag">AD</span><span class="tag">Windows Server</span><span class="tag">SYSVOL</span><span class="tag">Backup</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 01</span><button class="case-btn" onclick="openCase('ad')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="infra" data-case="vmware">
+            <div class="project-visual"><div class="diagram"><div class="dnode accent">vCENTER</div><span class="arrow">→</span><div class="dnode">HOST 01</div><span class="arrow">→</span><div class="dnode">VMs</div></div></div>
+            <div class="project-content"><div class="project-cat">Infraestrutura</div><h3>Infraestrutura Virtualizada</h3><p>Administração e organização de ambiente VMware envolvendo hosts, máquinas virtuais, disponibilidade, recursos e monitoramento.</p><div class="tags"><span class="tag">VMware</span><span class="tag">vSphere</span><span class="tag">HA</span><span class="tag">Monitoramento</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 02</span><button class="case-btn" onclick="openCase('vmware')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="network" data-case="fortinet">
+            <div class="project-visual"><div class="diagram"><div class="dnode">INTERNET</div><span class="arrow">→</span><div class="dnode accent">FORTINET</div><span class="arrow">→</span><div class="dnode">VLAN / VPN</div></div></div>
+            <div class="project-content"><div class="project-cat">Redes & Segurança</div><h3>Firewall & Segurança de Rede</h3><p>Atuação em conectividade, políticas, segmentação, migração e validação de ambientes Fortinet.</p><div class="tags"><span class="tag">Fortinet</span><span class="tag">Firewall</span><span class="tag">VLAN</span><span class="tag">VPN</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 03</span><button class="case-btn" onclick="openCase('fortinet')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="data" data-case="database">
+            <div class="project-visual"><div class="diagram"><div class="dnode">APPLICATION</div><span class="arrow">→</span><div class="dnode accent">DATABASE</div><span class="arrow">→</span><div class="dnode">BACKUP</div></div></div>
+            <div class="project-content"><div class="project-cat">Dados</div><h3>SQL Server & Oracle Operations</h3><p>Consultas, procedures, troubleshooting, restore, capacidade e manutenção de bancos utilizados por sistemas corporativos.</p><div class="tags"><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">T-SQL</span><span class="tag">PL/SQL</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 04</span><button class="case-btn" onclick="openCase('database')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="systems" data-case="iis">
+            <div class="project-visual"><div class="diagram"><div class="dnode">USER</div><span class="arrow">→</span><div class="dnode accent">IIS / .NET</div><span class="arrow">→</span><div class="dnode">SQL</div></div></div>
+            <div class="project-content"><div class="project-cat">Sistemas</div><h3>Aplicações Corporativas no IIS</h3><p>Publicação, sustentação e troubleshooting de aplicações corporativas conectando infraestrutura, aplicação e banco.</p><div class="tags"><span class="tag">IIS</span><span class="tag">.NET</span><span class="tag">ASP.NET</span><span class="tag">SQL</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 05</span><button class="case-btn" onclick="openCase('iis')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="systems" data-case="legacy">
+            <div class="project-visual"><div class="diagram"><div class="dnode">VB6</div><span class="arrow">→</span><div class="dnode accent">.NET / API</div><span class="arrow">→</span><div class="dnode">NEW DB</div></div></div>
+            <div class="project-content"><div class="project-cat">Modernização</div><h3>Modernização de Sistema Legado</h3><p>Análise de arquitetura VB6 para preservar regras de negócio enquanto prepara o sistema para arquitetura moderna, APIs e novo banco.</p><div class="tags"><span class="tag">VB6</span><span class="tag">.NET</span><span class="tag">APIs</span><span class="tag">SQL</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 06</span><button class="case-btn" onclick="openCase('legacy')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="automation" data-case="automation">
+            <div class="project-visual"><div class="diagram"><div class="dnode">MANUAL</div><span class="arrow">→</span><div class="dnode accent">SCRIPT</div><span class="arrow">→</span><div class="dnode">LOG</div></div></div>
+            <div class="project-content"><div class="project-cat">Automação</div><h3>Automação de Rotinas de TI</h3><p>Uso de scripts para transformar tarefas repetitivas em processos mais rápidos, padronizados e documentáveis.</p><div class="tags"><span class="tag">PowerShell</span><span class="tag">Batch</span><span class="tag">Python</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 07</span><button class="case-btn" onclick="openCase('automation')">Ver case →</button></div></div>
+          </article>
+
+          <article class="project reveal" data-category="systems" data-case="web">
+            <div class="project-visual"><div class="diagram"><div class="dnode">UI</div><span class="arrow">→</span><div class="dnode accent">REACT</div><span class="arrow">→</span><div class="dnode">API</div></div></div>
+            <div class="project-content"><div class="project-cat">Desenvolvimento</div><h3>Aplicações Web & Dashboards</h3><p>Desenvolvimento de interfaces e aplicações modernas para sistemas, portais, dashboards e soluções internas.</p><div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">APIs</span></div><div class="project-footer"><span class="mono" style="font-size:9px;color:var(--dim)">CASE / 08</span><button class="case-btn" onclick="openCase('web')">Ver case →</button></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">06 / Laboratório</div>
+          <h2>Experimentando. Construindo. <span>Aprendendo.</span></h2>
+          <p class="lead">Projetos e experimentos para testar tecnologias, arquiteturas e soluções sem comprometer ambientes produtivos.</p>
+        </div>
+        <div class="lab-grid">
+          <article class="lab reveal"><div class="code">LAB / NETWORK</div><h3>Network Lab</h3><p>Estudos e experimentos envolvendo firewall, VLAN, VPN e conectividade.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+          <article class="lab reveal"><div class="code">LAB / VIRTUAL</div><h3>VMware Lab</h3><p>Virtualização, hosts, VMs, disponibilidade e otimização de recursos.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+          <article class="lab reveal"><div class="code">LAB / DATA</div><h3>Database Lab</h3><p>SQL Server, Oracle, consultas, capacidade, backup e troubleshooting.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+          <article class="lab reveal"><div class="code">LAB / AUTOMATION</div><h3>Automation Lab</h3><p>PowerShell, Batch e Python aplicados à automação de rotinas.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+          <article class="lab reveal"><div class="code">LAB / WEB</div><h3>Web Lab</h3><p>React, Next.js, interfaces, APIs e aplicações modernas.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+          <article class="lab reveal"><div class="code">LAB / LEGACY</div><h3>Legacy Lab</h3><p>Estudos de modernização de sistemas legados para arquiteturas atuais.</p><span class="state">● EXPLORAÇÃO CONTÍNUA</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">07 / Stack</div>
+          <h2>Ferramentas que fazem parte da <span>atuação.</span></h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-card reveal"><h3>Infraestrutura</h3><div class="stack-list"><span class="stack-item">Windows Server</span><span class="stack-item">Active Directory</span><span class="stack-item">GPO</span><span class="stack-item">VMware</span><span class="stack-item">Veeam</span><span class="stack-item">IIS</span></div></div>
+          <div class="stack-card reveal"><h3>Redes & Segurança</h3><div class="stack-list"><span class="stack-item">Fortinet</span><span class="stack-item">MikroTik</span><span class="stack-item">UniFi</span><span class="stack-item">VLAN</span><span class="stack-item">VPN</span><span class="stack-item">Firewall</span></div></div>
+          <div class="stack-card reveal"><h3>Dados</h3><div class="stack-list"><span class="stack-item">SQL Server</span><span class="stack-item">Oracle</span><span class="stack-item">PL/SQL</span><span class="stack-item">T-SQL</span></div></div>
+          <div class="stack-card reveal"><h3>Desenvolvimento</h3><div class="stack-list"><span class="stack-item">.NET</span><span class="stack-item">ASP.NET</span><span class="stack-item">ASP Classic</span><span class="stack-item">React</span><span class="stack-item">Next.js</span><span class="stack-item">JavaScript</span></div></div>
+          <div class="stack-card reveal"><h3>Automação</h3><div class="stack-list"><span class="stack-item">PowerShell</span><span class="stack-item">Batch</span><span class="stack-item">Python</span></div></div>
+          <div class="stack-card reveal"><h3>Cloud & Métodos</h3><div class="stack-list"><span class="stack-item">Azure</span><span class="stack-item">Office 365</span><span class="stack-item">ITIL</span><span class="stack-item">Agile</span><span class="stack-item">Gestão de Projetos</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacao">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">08 / Formação</div>
+          <h2>Conhecimento técnico em <span>evolução.</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="edu reveal"><div class="edu-card"><div class="date">2023 — 2026</div><h3>Gestão da Tecnologia da Informação</h3><p>Centro Universitário Impacta · Formação concluída.</p></div></div>
+          <div class="edu reveal"><div class="edu-card"><div class="date">2022 — 2023</div><h3>Active Directory — Backup & Restauração</h3><p>Udemy · Estudos de backup, restauração e recuperação.</p></div></div>
+          <div class="edu reveal"><div class="edu-card"><div class="date">2022 — 2023</div><h3>MikroTik — Básico ao Avançado</h3><p>Udemy · Redes e administração MikroTik.</p></div></div>
+          <div class="edu reveal"><div class="edu-card"><div class="date">2024 — atual</div><h3>Cloud & Modernização de Infraestrutura</h3><p>Estudos contínuos em Azure, automação, arquitetura e modernização.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="eyebrow">09 / Contato</div>
+          <h2>Vamos resolver o próximo <span>desafio de TI?</span></h2>
+          <p>Estou aberto a oportunidades profissionais, projetos e desafios relacionados a infraestrutura, sistemas, redes, dados, automação e modernização tecnológica.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="mailto:c.afonso89@outlook.com.br?subject=Contato%20pelo%20portf%C3%B3lio">Enviar e-mail</a>
+            <a class="btn btn-outline" href="mailto:rasec0209@gmail.com?subject=Contato%20pelo%20portf%C3%B3lio">E-mail alternativo</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/cesar-afonso-752244271/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-outline" href="https://wa.me/5511981924669?text=Ol%C3%A1%20Cesar%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20entrar%20em%20contato." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:c.afonso89@outlook.com.br">✉ c.afonso89@outlook.com.br</a>
+            <a class="contact-link" href="mailto:rasec0209@gmail.com">✉ rasec0209@gmail.com</a>
+            <a class="contact-link" href="#projetos">Ver cases técnicos</a>
+            <a class="contact-link" href="#lab">Conhecer o Lab</a>
+            <a class="contact-link" href="#inicio">Voltar ao início ↑</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="cv-only"><div class="cv-page"><div class="cv-header"><div><div class="cv-name">Cesar Afonso</div><div class="cv-role">Analista Técnico de TI · Infraestrutura · Sistemas · Redes · Dados · Automação</div></div><div class="cv-contact">c.afonso89@outlook.com.br<br>rasec0209@gmail.com<br>linkedin.com/in/cesar-afonso-752244271<br>WhatsApp: (11) 98192-4669</div></div><div class="cv-section"><h2>Resumo profissional</h2><p>Profissional de TI com 7+ anos de experiência em ambientes corporativos, atuando em infraestrutura, sistemas, redes, bancos de dados, automação e modernização tecnológica.</p></div><div class="cv-section"><h2>Experiência</h2><div class="cv-item"><b>Madri Solutions → Movebuss · Analista Técnico de TI</b><span class="cv-date">13/05/2019 — atual</span><ul><li>Suporte N1/N2 e troubleshooting.</li><li>Active Directory, GPO, Office 365 e Windows Server.</li><li>VMware, Veeam, backup e recuperação.</li><li>Fortinet, MikroTik, UniFi, VLAN e VPN.</li><li>SQL Server, Oracle, T-SQL e PL/SQL.</li><li>IIS/.NET, documentação e melhoria de processos.</li></ul></div></div><div class="cv-grid"><div class="cv-section"><h2>Especialidades</h2><ul><li>Windows Server / AD / GPO</li><li>VMware / Veeam</li><li>Fortinet / MikroTik / UniFi</li><li>SQL Server / Oracle</li><li>.NET / IIS / APIs</li><li>PowerShell / Batch / Python</li><li>React / Next.js / Tailwind</li><li>Modernização de sistemas legados</li></ul></div><div class="cv-section"><h2>Projetos</h2><ul><li>Active Directory & Disaster Recovery</li><li>Infraestrutura VMware</li><li>Firewall e segurança de rede</li><li>SQL Server & Oracle</li><li>Aplicações corporativas no IIS</li><li>Modernização VB6</li><li>Automação de rotinas</li><li>Aplicações Web & Dashboards</li></ul></div></div><div class="cv-section"><h2>Formação</h2><p><b>Gestão da Tecnologia da Informação — Centro Universitário Impacta</b> · 2023–2026</p><p>Active Directory — Backup & Restauração · Udemy</p><p>MikroTik — Básico ao Avançado · Udemy</p><p>Cloud & Modernização de Infraestrutura — Azure / Automação · 2024–atual</p></div><div class="cv-section"><h2>Stack</h2><p>Windows Server · Active Directory · VMware · Veeam · IIS · Fortinet · MikroTik · UniFi · VLAN · VPN · SQL Server · Oracle · PL/SQL · T-SQL · .NET · ASP.NET · React · Next.js · PowerShell · Batch · Python · Azure · Office 365 · ITIL · Agile</p></div></div></section><footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">CESAR AFONSO · TI / INFRA / SYSTEMS</div>
+      <p>© 2026 Cesar Afonso · Portfólio V2</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="caseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head"><h3 id="modalTitle">Case</h3><button class="close" onclick="closeCase()" aria-label="Fechar">×</button></div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn.addEventListener('click',()=>nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+
+    const observer = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('visible')});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    const filters = document.querySelectorAll('.filter');
+    const projects = document.querySelectorAll('.project');
+    filters.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        filters.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter=btn.dataset.filter;
+        projects.forEach(p=>p.classList.toggle('hidden',filter!=='all' && p.dataset.category!==filter));
+      });
+    });
+
+    const cases = {
+      ad:{
+        title:'Active Directory & Disaster Recovery',
+        context:'Projeto voltado a backup, restauração e recuperação de componentes de um ambiente Active Directory.',
+        action:'Estruturação de procedimentos e análise dos componentes necessários para uma recuperação controlada, com atenção a Active Directory e SYSVOL.',
+        tech:'Active Directory · Windows Server · SYSVOL · Backup · Disaster Recovery'
+      },
+      vmware:{
+        title:'Infraestrutura Virtualizada',
+        context:'Ambiente virtualizado com necessidade de organização de recursos, máquinas virtuais, disponibilidade e monitoramento.',
+        action:'Atuação na administração e sustentação do ambiente VMware, considerando hosts, VMs, disponibilidade e otimização de recursos.',
+        tech:'VMware · vSphere · HA · Virtualização · Monitoramento'
+      },
+      fortinet:{
+        title:'Firewall & Segurança de Rede',
+        context:'Ambientes corporativos dependem de políticas de firewall, segmentação e conectividade controlada.',
+        action:'Atuação com Fortinet em políticas, conectividade, VLAN/VPN, validações e processos de migração/backup, sem exposição de dados reais.',
+        tech:'Fortinet · Firewall · VLAN · VPN · Segurança'
+      },
+      database:{
+        title:'SQL Server & Oracle Operations',
+        context:'Bancos corporativos exigem análise técnica para manter aplicações funcionando e resolver incidentes.',
+        action:'Consultas, procedures, troubleshooting, restore, capacidade, manutenção e investigação de problemas em SQL Server e Oracle.',
+        tech:'SQL Server · Oracle · T-SQL · PL/SQL · Backup/Restore'
+      },
+      iis:{
+        title:'Aplicações Corporativas no IIS',
+        context:'Aplicações corporativas dependem da integração correta entre servidor web, aplicação e banco de dados.',
+        action:'Publicação, configuração, manutenção e troubleshooting de aplicações em IIS, analisando também dependências da aplicação e do banco.',
+        tech:'IIS · .NET · ASP.NET · ASP Classic · SQL Server'
+      },
+      legacy:{
+        title:'Modernização de Sistema Legado',
+        context:'Sistemas legados precisam evoluir sem perder regras de negócio e funcionalidades importantes.',
+        action:'Análise de arquitetura VB6 com proposta de evolução para arquitetura moderna, APIs e novo banco, preservando a lógica de negócio durante a transição.',
+        tech:'VB6 · .NET · APIs · SQL Server · Arquitetura'
+      },
+      automation:{
+        title:'Automação de Rotinas de TI',
+        context:'Tarefas repetitivas podem consumir tempo e gerar inconsistência quando executadas manualmente.',
+        action:'Criação e uso de scripts para padronizar rotinas, reduzir trabalho manual e facilitar registro e repetibilidade.',
+        tech:'PowerShell · Batch · Python · Logs · Processos'
+      },
+      web:{
+        title:'Aplicações Web & Dashboards',
+        context:'Interfaces modernas ajudam sistemas internos e projetos digitais a apresentar informação de forma mais clara.',
+        action:'Desenvolvimento de interfaces, dashboards e aplicações utilizando tecnologias web modernas e integração com APIs.',
+        tech:'React · Next.js · Tailwind CSS · JavaScript · APIs'
+      }
+    };
+
+    function openCase(key){
+      const c=cases[key];
+      document.getElementById('modalTitle').textContent=c.title;
+      document.getElementById('modalBody').innerHTML=
+        '<h4>Contexto</h4><p>'+c.context+'</p>'+
+        '<h4>Atuação</h4><p>'+c.action+'</p>'+
+        '<h4>Tecnologias</h4><p>'+c.tech+'</p>'+
+        '<div class="modal-tags tags"><span class="tag">Case técnico</span><span class="tag">Dados anonimizados</span></div>';
+      document.getElementById('caseModal').classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeCase(){
+      document.getElementById('caseModal').classList.remove('open');
+      document.body.style.overflow='';
+    }
+    document.getElementById('caseModal').addEventListener('click',e=>{if(e.target.id==='caseModal') closeCase()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') closeCase()}); function generateCV(){const t=document.title;document.title='Cesar Afonso - CV';window.print();setTimeout(()=>document.title=t,800);}
+  </script>
+</body>
+</html>
